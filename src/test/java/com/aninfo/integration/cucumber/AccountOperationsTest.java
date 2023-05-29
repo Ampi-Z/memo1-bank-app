@@ -67,6 +67,16 @@ public class AccountOperationsTest extends AccountIntegrationServiceTest {
         assertEquals(Double.valueOf(balance), account.getBalance());
     }
 
+    @Then("^Account with a balance of (\\d+)$ should increase by 10%")
+    public void account_balance_should_increase_by_ten_percent(int balance) {
+        assertEquals(Double.valueOf(balance + 0.1 * balance), account.getBalance());
+    }
+
+    @Then("^Account with a balance of (\\d+)$ should increase by 500")
+    public void account_balance_should_increase_by_five_hundred(int balance) {
+        assertEquals(Double.valueOf(balance + 500), account.getBalance());
+    }
+    
     @After
     public void tearDown() {
         System.out.println("After all test execution");
