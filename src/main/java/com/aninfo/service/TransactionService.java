@@ -31,15 +31,7 @@ public class TransactionService {
     public void deleteById(Long id) {
         transactionRepository.deleteById(id);
     }
-/*
-    public Collection<Transaction> getTransactions() {
-        return transactionRepository.findAll();
-    }
 
-    public void save(Transaction transaction) {
-        transactionRepository.save(transaction);
-    }
-*/
     public Transaction createTransaction(Double amount, String type, Long cbu) {
         if(type.equals("deposit")){
             accountService.deposit(cbu, amount);
